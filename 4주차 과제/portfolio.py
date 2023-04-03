@@ -17,7 +17,7 @@ class Portfolio:
 
         for d in portdicts:
             holding = stock.Stock(name=d['name'], shares=d['shares'], price=d['price'])
-            self.append(holding)  # 들여쓰기를 수정했습니다.
+            self.append(holding)
 
         return self
 
@@ -41,8 +41,8 @@ class Portfolio:
         print("-" * 42)
 
         for holding in self._holdings:
-            current_price = prices[holding.name]  # 현재 가격 찾기
-            change = current_price - holding.price  # 변화 계산
+            current_price = prices[holding.name]
+            change = current_price - holding.price
             print("{:<10} {:>10} {:>10.2f} {:>10.2f}".format(holding.name, holding.shares, holding.price, change))
 '''
     def __iter__(self):
